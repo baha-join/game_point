@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ game.title }} - GAMING STORE{% endblock %}
+
+{% block content %}
+<h1>{{ game.title }}</h1>
+<p><strong>Цена: {{ game.price }} RUB</strong></p>
+<p>Жанр: {{ game.genre }}</p>
+<p>Платформа: {{ game.platform }}</p>
+<p>Продавец: {{ game.seller.login }} (Рейтинг: {{ game.seller.rating }})</p>
+<p>{{ game.description }}</p>
+<button class="btn btn-primary">Добавить в корзину</button>
+
+<h3 class="mt-4">Отзывы</h3>
+{% for review in reviews %}
+<div class="card mb-3">
+    <div class="card-body">
+        <h6 class="card-title">Пользователь {{ review.user.id }}</h6>
+        <p class="card-text">Рейтинг: {{ review.rating }}/5</p>
+        <p class="card-text">{{ review.comment }}</p>
+    </div>
+</div>
+{% empty %}
+<p>Пока нет отзывов</p>
+{% endfor %}
+{% endblock %}

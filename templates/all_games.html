@@ -1,0 +1,179 @@
+{% extends 'base.html' %}
+
+{% block title %}Каталог - GAMING STORE{% endblock %}
+
+{% block content %}
+<div class="text-center mb-5">
+    <h1 class="display-4 fw-bold mb-3">Каталог игр и приложений</h1>
+    <p class="lead">Полный каталог игр и приложений</p>
+</div>
+
+<div class="card game-card mb-4">
+    <div class="card-body">
+        <h2 class="card-title mb-4">Поиск игр и приложений</h2>
+        
+        <!-- Статистика -->
+        <div class="row text-center mb-4">
+            <div class="col-md-4">
+                <div class="stat-card">
+                    <h3 class="text-primary">498</h3>
+                    <p class="text-muted">Игры</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-card">
+                    <h3 class="text-success">282</h3>
+                    <p class="text-muted">Мобильные игры</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-card">
+                    <h3 class="text-warning">55</h3>
+                    <p class="text-muted">Приложения</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Поиск -->
+        <div class="search-box mb-4">
+            <input type="text" class="form-control search-input-lg" placeholder="Поиск игр и приложений...">
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Игры -->
+    <div class="col-md-6">
+        <div class="card game-card mb-4">
+            <div class="card-body">
+                <h3 class="card-title mb-3">Все игры</h3>
+                <div class="games-grid">
+                    <div class="game-item"><div class="game-icon">R</div>Roblox</div>
+                    <div class="game-item"><div class="game-icon">F</div>Fortnite</div>
+                    <div class="game-item"><div class="game-icon">M</div>Minecraft</div>
+                    <div class="game-item"><div class="game-icon">G</div>Genshin Impact</div>
+                    <div class="game-item"><div class="game-icon">V</div>Valorant</div>
+                    <div class="game-item"><div class="game-icon">G</div>GTA 5 Online</div>
+                    <div class="game-item"><div class="game-icon">B</div>Battlefield 6</div>
+                    <div class="game-item"><div class="game-icon">A</div>ARC Raiders</div>
+                    <div class="game-item"><div class="game-icon">D</div>Dota 2</div>
+                    <div class="game-item"><div class="game-icon">S</div>StarCraft</div>
+                    <div class="game-item"><div class="game-icon">H</div>Hearthstone</div>
+                    <div class="game-item"><div class="game-icon">E</div>EA SPORTS FC</div>
+                    <div class="game-item"><div class="game-icon">A</div>Arena Breakout</div>
+                    <div class="game-item"><div class="game-icon">W</div>World of Tanks</div>
+                    <div class="game-item"><div class="game-icon">R</div>Rust</div>
+                    <div class="game-item"><div class="game-icon">D</div>Dead by Daylight</div>
+                    <div class="game-item"><div class="game-icon">W</div>World of Warcraft</div>
+                    <div class="game-item"><div class="game-icon">A</div>Apex Legends</div>
+                    <div class="game-item"><div class="game-icon">P</div>PK XD</div>
+                    <div class="game-item"><div class="game-icon">P</div>Path of Exile</div>
+                    <div class="game-item"><div class="game-icon">F</div>Football Manager</div>
+                    <div class="game-item"><div class="game-icon">W</div>Warface</div>
+                    <div class="game-item"><div class="game-icon">W</div>Warframe</div>
+                    <div class="game-item"><div class="game-icon">W</div>World of Warships</div>
+                    <div class="game-item"><div class="game-icon">E</div>eFootball</div>
+                    <div class="game-item"><div class="game-icon">H</div>Honkai Star Rail</div>
+                    <div class="game-item"><div class="game-icon">C</div>Call of Duty</div>
+                    <div class="game-item"><div class="game-icon">W</div>War Robots</div>
+                    <div class="game-item"><div class="game-icon">A</div>Albion Online</div>
+                    <div class="game-item"><div class="game-icon">D</div>Diablo 4</div>
+                    <div class="game-item"><div class="game-icon">E</div>Europa Universalis</div>
+                    <div class="game-item"><div class="game-icon">H</div>Helldivers 2</div>
+                    <div class="game-item"><div class="game-icon">O</div>Overwatch 2</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Мобильные игры и приложения -->
+    <div class="col-md-6">
+        <!-- Мобильные игры -->
+        <div class="card game-card mb-4">
+            <div class="card-body">
+                <h3 class="card-title mb-3">Мобильные игры</h3>
+                <div class="games-grid">
+                    <div class="game-item"><div class="game-icon">P</div>PUBG Mobile</div>
+                    <div class="game-item"><div class="game-icon">B</div>Brawl Stars</div>
+                    <div class="game-item"><div class="game-icon">C</div>Clash Royale</div>
+                    <div class="game-item"><div class="game-icon">C</div>Clash of Clans</div>
+                    <div class="game-item"><div class="game-icon">S</div>Standoff 2</div>
+                    <div class="game-item"><div class="game-icon">M</div>Mobile Legends</div>
+                    <div class="game-item"><div class="game-icon">F</div>Free Fire</div>
+                    <div class="game-item"><div class="game-icon">C</div>Call of Duty Mobile</div>
+                    <div class="game-item"><div class="game-icon">L</div>Last Island of Survival</div>
+                    <div class="game-item"><div class="game-icon">O</div>Oxide Survivor</div>
+                    <div class="game-item"><div class="game-icon">T</div>Tanks Mobile</div>
+                    <div class="game-item"><div class="game-icon">D</div>Drag Racing</div>
+                    <div class="game-item"><div class="game-icon">R</div>RAID Shadow Legends</div>
+                    <div class="game-item"><div class="game-icon">M</div>Mortal Kombat</div>
+                    <div class="game-item"><div class="game-icon">C</div>Car Parking</div>
+                    <div class="game-item"><div class="game-icon">B</div>Blockman GO</div>
+                    <div class="game-item"><div class="game-icon">R</div>Rise of Kingdoms</div>
+                    <div class="game-item"><div class="game-icon">M</div>My Singing Monsters</div>
+                    <div class="game-item"><div class="game-icon">S</div>Star Wars Galaxy</div>
+                    <div class="game-item"><div class="game-icon">A</div>Avakin Life</div>
+                    <div class="game-item"><div class="game-icon">B</div>Blood Strike</div>
+                    <div class="game-item"><div class="game-icon">H</div>Highrise</div>
+                    <div class="game-item"><div class="game-icon">H</div>Homescapes</div>
+                    <div class="game-item"><div class="game-icon">H</div>Hay Day</div>
+                    <div class="game-item"><div class="game-icon">L</div>League of Legends</div>
+                    <div class="game-item"><div class="game-icon">D</div>Diablo Immortal</div>
+                    <div class="game-item"><div class="game-icon">T</div>Township</div>
+                    <div class="game-item"><div class="game-icon">C</div>Cookie Run</div>
+                    <div class="game-item"><div class="game-icon">V</div>Viking Rise</div>
+                    <div class="game-item"><div class="game-icon">M</div>Marvel Contest</div>
+                    <div class="game-item"><div class="game-icon">G</div>Gardenscapes</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Приложения -->
+        <div class="card game-card">
+            <div class="card-body">
+                <h3 class="card-title mb-3">Приложения</h3>
+                <div class="games-grid">
+                    <div class="game-item"><div class="game-icon">S</div>Steam</div>
+                    <div class="game-item"><div class="game-icon">T</div>Telegram</div>
+                    <div class="game-item"><div class="game-icon">P</div>PlayStation</div>
+                    <div class="game-item"><div class="game-icon">T</div>TikTok</div>
+                    <div class="game-item"><div class="game-icon">A</div>App Store</div>
+                    <div class="game-item"><div class="game-icon">C</div>ChatGPT</div>
+                    <div class="game-item"><div class="game-icon">D</div>Discord</div>
+                    <div class="game-item"><div class="game-icon">W</div>Windows</div>
+                    <div class="game-item"><div class="game-icon">X</div>Xbox</div>
+                    <div class="game-item"><div class="game-icon">S</div>Spotify</div>
+                    <div class="game-item"><div class="game-icon">A</div>Adobe</div>
+                    <div class="game-item"><div class="game-icon">N</div>Nintendo</div>
+                    <div class="game-item"><div class="game-icon">G</div>Google Play</div>
+                    <div class="game-item"><div class="game-icon">B</div>Battle.net</div>
+                    <div class="game-item"><div class="game-icon">F</div>FL Studio</div>
+                    <div class="game-item"><div class="game-icon">Y</div>YouTube</div>
+                    <div class="game-item"><div class="game-icon">C</div>CapCut</div>
+                    <div class="game-item"><div class="game-icon">E</div>Epic Games</div>
+                    <div class="game-item"><div class="game-icon">R</div>Rockstar Games</div>
+                    <div class="game-item"><div class="game-icon">T</div>Twitch</div>
+                    <div class="game-item"><div class="game-icon">R</div>Razer Gold</div>
+                    <div class="game-item"><div class="game-icon">N</div>Netflix</div>
+                    <div class="game-item"><div class="game-icon">E</div>EA Play</div>
+                    <div class="game-item"><div class="game-icon">M</div>Microsoft Store</div>
+                    <div class="game-item"><div class="game-icon">O</div>OBS Studio</div>
+                    <div class="game-item"><div class="game-icon">D</div>DeepSeek</div>
+                    <div class="game-item"><div class="game-icon">U</div>Ubisoft</div>
+                    <div class="game-item"><div class="game-icon">S</div>SoundCloud</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Cookie уведомление -->
+<div class="card game-card mt-4">
+    <div class="card-body text-center">
+        <p class="mb-0 text-muted">
+            Мы используем cookie файлы, чтобы улучшить работу сайта. 
+            <a href="#" class="text-primary">Подробнее</a>
+        </p>
+    </div>
+</div>
+{% endblock %}

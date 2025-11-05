@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Результаты поиска - GAMING STORE{% endblock %}
+
+{% block content %}
+<h1>Результаты поиска</h1>
+
+{% if query %}
+    <p>Результаты для: "{{ query }}"</p>
+{% endif %}
+
+<div class="row">
+    {% if games %}
+        {% for game in games %}
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ game.title }}</h5>
+                    <p class="card-text">{{ game.description }}</p>
+                    <p><strong>Цена: {{ game.price }} RUB</strong></p>
+                    <p>Продавец: {{ game.seller.login }} (Рейтинг: {{ game.seller.rating }})</p>
+                    <button class="btn btn-primary">В корзину</button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>Игры не найдены.</p>
+    {% endif %}
+</div>
+{% endblock %}

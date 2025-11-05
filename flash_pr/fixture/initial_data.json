@@ -1,0 +1,101 @@
+[
+  {
+    "model": "flash_pr.users",
+    "pk": 1,
+    "fields": {
+      "full_name": "Иван Иванов",
+      "mail": "ivan@mail.com",
+      "password": "pbkdf2_sha256$260000$abc123...",
+      "registration_date": "2024-01-15"
+    }
+  },
+  {
+    "model": "flash_pr.users",
+    "pk": 2,
+    "fields": {
+      "full_name": "Петр Петров",
+      "mail": "petr@mail.com",
+      "password": "pbkdf2_sha256$260000$def456...",
+      "registration_date": "2024-01-16"
+    }
+  },
+  {
+    "model": "flash_pr.sellers",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "login": "gamer_shop",
+      "email": "gamer@shop.com",
+      "phone_number": "+79111111111",
+      "rating": "4.75",
+      "registration_date": "2024-01-15"
+    }
+  },
+  {
+    "model": "flash_pr.sellers",
+    "pk": 2,
+    "fields": {
+      "user": 2,
+      "login": "game_world",
+      "email": "game@world.com",
+      "phone_number": "+79222222222",
+      "rating": "4.50",
+      "registration_date": "2024-01-16"
+    }
+  },
+  {
+    "model": "flash_pr.games",
+    "pk": 1,
+    "fields": {
+      "seller": 1,
+      "title": "The Witcher 3: Wild Hunt",
+      "description": "Захватывающая RPG в фэнтезийном мире",
+      "genre": "RPG",
+      "release_date": "2015-05-19",
+      "platform": "PC, PlayStation, Xbox"
+    }
+  },
+  {
+    "model": "flash_pr.games",
+    "pk": 2,
+    "fields": {
+      "seller": 1,
+      "title": "Cyberpunk 2077",
+      "description": "Научно-фантастическая RPG в будущем",
+      "genre": "RPG",
+      "release_date": "2020-12-10",
+      "platform": "PC, PlayStation, Xbox"
+    }
+  },
+  {
+    "model": "flash_pr.reviews",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "game": 1,
+      "rating": 5,
+      "comment": "Отличная игра, потрясающий сюжет!",
+      "review_date": "2024-01-20"
+    }
+  },
+  {
+    "model": "flash_pr.orders",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "status": "completed",
+      "created_date": "2024-01-18T10:30:00Z",
+      "updated_date": "2024-01-18T10:30:00Z"
+    }
+  },
+  {
+    "model": "flash_pr.orderitems",
+    "pk": 1,
+    "fields": {
+      "order": 1,
+      "game": 1,
+      "quantity": 1,
+      "price": "29.99"
+    }
+  }
+]

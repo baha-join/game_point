@@ -1,0 +1,254 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="text-center mb-5">
+    <h1 class="display-4 fw-bold mb-3">Добро пожаловать в GAMING STORE</h1>
+    <p class="lead text-light">Лучшие игры по лучшим ценам</p>
+</div>
+
+<!-- Донат и баланс -->
+<div class="card game-card mb-5">
+    <div class="card-body">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h3 class="text-primary">
+                    <i class="fas fa-coins me-2"></i>
+                    Донат и пополнение
+                </h3>
+                <div class="row mt-3">
+                    <div class="col-6">
+                        <button class="btn btn-outline-primary w-100 mb-2">
+                            <i class="fas fa-gift me-1"></i>Предметы
+                        </button>
+                        <button class="btn btn-outline-primary w-100 mb-2">
+                            <i class="fas fa-user me-1"></i>Аккаунты
+                        </button>
+                        <button class="btn btn-outline-primary w-100 mb-2">
+                            <i class="fas fa-wallet me-1"></i>Баланс
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button class="btn btn-outline-primary w-100 mb-2">
+                            <i class="fas fa-key me-1"></i>Ключи
+                        </button>
+                        <button class="btn btn-outline-primary w-100 mb-2">
+                            <i class="fas fa-crown me-1"></i>Подписки
+                        </button>
+                        <button class="btn btn-outline-primary w-100 mb-2">
+                            <i class="fas fa-money-bill me-1"></i>Валюта
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card bg-dark text-light">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fab fa-steam me-2"></i>
+                            Пополнить Steam
+                        </h5>
+                        <div class="mb-3">
+                            <input type="text" class="form-control mb-2" placeholder="Логин Steam">
+                            <input type="number" class="form-control mb-2" placeholder="Сумма" value="1000">
+                            <div class="d-flex justify-content-between text-warning">
+                                <span>Комиссия: 9%</span>
+                                <span>Итого: 1080 ₽</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-warning w-100">
+                            <i class="fas fa-bolt me-1"></i>
+                            Оплатить 1080 ₽
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Популярные игры -->
+<div class="row">
+    <div class="col-md-8">
+        <h3 class="mb-4">
+            <i class="fas fa-fire me-2"></i>
+            Популярные игры
+        </h3>
+        
+        <div class="row">
+            <!-- Основные игры -->
+            <div class="col-md-6 mb-4">
+                <div class="card game-card">
+                    <div class="card-body">
+                        <h5 class="card-title">The Witcher 3: Wild Hunt</h5>
+                        <p class="card-text">Захватывающая RPG в фэнтезийном мире</p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="price">1999.00 RUB</span>
+                            <span class="rating">
+                                <i class="fas fa-star"></i> 4.75
+                            </span>
+                        </div>
+                        <p class="text-muted small">
+                            <i class="fas fa-store me-1"></i>
+                            Продавец: gamer_shop
+                        </p>
+                        <button class="btn btn-primary w-100">
+                            <i class="fas fa-cart-plus me-2"></i>
+                            В корзину
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 mb-4">
+                <div class="card game-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Cyberpunk 2077</h5>
+                        <p class="card-text">Научно-фантастическая RPG в будущем</p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="price">2499.00 RUB</span>
+                            <span class="rating">
+                                <i class="fas fa-star"></i> 4.75
+                            </span>
+                        </div>
+                        <p class="text-muted small">
+                            <i class="fas fa-store me-1"></i>
+                            Продавец: gamer_shop
+                        </p>
+                        <button class="btn btn-primary w-100">
+                            <i class="fas fa-cart-plus me-2"></i>
+                            В корзину
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Список популярных игр -->
+        <div class="card game-card mb-4">
+            <div class="card-body">
+                <h5 class="card-title mb-3">Все популярные игры</h5>
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-gamepad me-2 text-primary"></i>AUTO SILES</li>
+                            <li class="mb-2"><i class="fas fa-cube me-2 text-success"></i>Minecraft</li>
+                            <li class="mb-2"><i class="fas fa-globe me-2 text-info"></i>Genshin Impact</li>
+                            <li class="mb-2"><i class="fas fa-crosshairs me-2 text-danger"></i>Counter-Strike</li>
+                            <li class="mb-2"><i class="fas fa-shield-alt me-2 text-warning"></i>Valorant</li>
+                            <li class="mb-2"><i class="fas fa-car me-2 text-secondary"></i>GTA 5 Online</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-fighter-jet me-2 text-primary"></i>Battlefield 6</li>
+                            <li class="mb-2"><i class="fas fa-skull me-2 text-dark"></i>ABC Raiders</li>
+                            <li class="mb-2"><i class="fab fa-steam me-2 text-light bg-dark p-1 rounded"></i>Steam</li>
+                            <li class="mb-2"><i class="fab fa-telegram me-2 text-primary"></i>Telegram</li>
+                            <li class="mb-2"><i class="fab fa-playstation me-2 text-primary"></i>PlayStation</li>
+                            <li class="mb-2"><i class="fab fa-tiktok me-2 text-dark"></i>TikTok</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Боковая панель -->
+    <div class="col-md-4">
+        <!-- Мобильные игры -->
+        <div class="card game-card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <i class="fas fa-mobile-alt me-2"></i>
+                    Мобильные игры
+                </h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-mobile me-2 text-success"></i>PUBG Mobile</li>
+                    <li class="mb-2"><i class="fas fa-star me-2 text-warning"></i>Brawl Stars</li>
+                    <li class="mb-2"><i class="fas fa-crown me-2 text-purple"></i>Clash Royale</li>
+                    <li class="mb-2"><i class="fas fa-shield me-2 text-danger"></i>Clash of Clans</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Приложения -->
+        <div class="card game-card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <i class="fas fa-th me-2"></i>
+                    Приложения
+                </h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fab fa-ok me-2 text-orange"></i>OK</li>
+                    <li class="mb-2"><i class="fab fa-steam me-2 text-light bg-dark p-1 rounded"></i>Steam</li>
+                    <li class="mb-2"><i class="fab fa-telegram me-2 text-primary"></i>Telegram</li>
+                    <li class="mb-2"><i class="fab fa-playstation me-2 text-primary"></i>PlayStation</li>
+                    <li class="mb-2"><i class="fab fa-tiktok me-2 text-dark"></i>TikTok</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Новые игры -->
+        <div class="card game-card">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <i class="fas fa-bolt me-2"></i>
+                    Новые игры
+                </h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-gamepad me-2 text-info"></i>Last Island of Survival</li>
+                    <li class="mb-2"><i class="fas fa-radiation me-2 text-warning"></i>Oxides Survivor</li>
+                    <li class="mb-2"><i class="fas fa-tank me-2 text-secondary"></i>Танки Мобильные</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Cookie уведомление -->
+<div class="card game-card mt-4">
+    <div class="card-body text-center">
+        <p class="mb-0 text-muted">
+            <i class="fas fa-cookie-bite me-2"></i>
+            Мы используем cookie-файлы, чтобы улучшить работу сайта. 
+            <a href="#" class="text-primary">Подробнее</a>
+        </p>
+    </div>
+</div>
+
+<!-- Статистика -->
+<div class="row mt-5 text-center">
+    <div class="col-md-3 mb-3">
+        <div class="card game-card">
+            <div class="card-body">
+                <h3 class="text-primary">{{ games_count }}</h3>
+                <p class="text-muted">Игр в каталоге</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-3">
+        <div class="card game-card">
+            <div class="card-body">
+                <h3 class="text-success">{{ sellers_count }}</h3>
+                <p class="text-muted">Продавцов</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-3">
+        <div class="card game-card">
+            <div class="card-body">
+                <h3 class="text-warning">{{ users_count }}</h3>
+                <p class="text-muted">Пользователей</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-3">
+        <div class="card game-card">
+            <div class="card-body">
+                <h3 class="text-info">5.0</h3>
+                <p class="text-muted">Рейтинг магазина</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

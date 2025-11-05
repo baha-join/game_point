@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Все игры - GAMING STORE{% endblock %}
+
+{% block content %}
+<h1>Все игры</h1>
+
+<div class="row">
+    {% for game in games %}
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ game.title }}</h5>
+                <p class="card-text">{{ game.genre }}</p>
+                <p class="card-text">{{ game.description|truncatewords:15 }}</p>
+                <p><strong>{{ game.price }} RUB</strong></p>
+                <button class="btn btn-primary">Купить</button>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

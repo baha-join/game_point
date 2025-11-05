@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Продавец {{ seller.login }} - GAMING STORE{% endblock %}
+
+{% block content %}
+<h1>Продавец: {{ seller.login }}</h1>
+<p><strong>Рейтинг: {{ seller.rating }}</strong></p>
+<p>Email: {{ seller.email }}</p>
+<p>Телефон: {{ seller.phone_number }}</p>
+
+<h3 class="mt-4">Игры продавца</h3>
+<div class="row">
+    {% for game in seller_games %}
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ game.title }}</h5>
+                <p class="card-text">{{ game.genre }}</p>
+                <p class="card-text">{{ game.description|truncatewords:15 }}</p>
+                <p><strong>{{ game.price }} RUB</strong></p>
+                <button class="btn btn-primary">Купить</button>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
