@@ -11,7 +11,6 @@
             <div class="card">
                 <div class="card-body">
                     <div id="cart-items">
-                        <!-- Товары будут загружены через JavaScript -->
                         <div class="text-center py-4">
                             <p class="text-muted">Корзина пуста</p>
                             <a href="/" class="btn btn-primary">Вернуться к покупкам</a>
@@ -59,7 +58,6 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Обновляем список товаров
         cartItems.innerHTML = items.map(item => `
             <div class="cart-item border-bottom pb-3 mb-3" data-item-id="${item.id}">
                 <div class="row align-items-center">
@@ -80,17 +78,14 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         `).join('');
 
-        // Обновляем итоги
         totalItems.textContent = items.reduce((sum, item) => sum + item.quantity, 0);
         totalPrice.textContent = cart.getTotalPrice().toFixed(2);
         checkoutBtn.disabled = false;
 
-        // Добавляем обработчики событий
         addCartEventListeners();
     }
 
     function addCartEventListeners() {
-        // Удаление товара
         document.querySelectorAll('.remove-item').forEach(button => {
             button.addEventListener('click', function() {
                 const itemId = this.closest('.cart-item').dataset.itemId;
@@ -98,8 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 updateCartDisplay();
             });
         });
-
-        // Изменение количества
+ 
         document.querySelectorAll('.quantity-input').forEach(input => {
             input.addEventListener('change', function() {
                 const itemId = this.closest('.cart-item').dataset.itemId;
@@ -109,7 +103,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
 
-        // Увеличение количества
         document.querySelectorAll('.increase-quantity').forEach(button => {
             button.addEventListener('click', function() {
                 const input = this.parentElement.querySelector('.quantity-input');
@@ -118,7 +111,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
 
-        // Уменьшение количества
         document.querySelectorAll('.decrease-quantity').forEach(button => {
             button.addEventListener('click', function() {
                 const input = this.parentElement.querySelector('.quantity-input');
@@ -130,7 +122,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Очистка корзины
     document.getElementById('clear-cart-btn').addEventListener('click', function() {
         if (confirm('Вы уверены, что хотите очистить корзину?')) {
             cart.clearCart();
@@ -138,12 +129,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Оформление заказа
+
     document.getElementById('checkout-btn').addEventListener('click', function() {
         alert('Функция оформления заказа будет реализована позже!');
     });
 
-    // Инициализация отображения корзины
     updateCartDisplay();
 });
 </script>

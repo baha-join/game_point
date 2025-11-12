@@ -5,15 +5,12 @@ Django settings for baha project.
 import os
 from pathlib import Path
 
-# Исправляем BASE_DIR - добавляем еще один .parent
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Quick-start development settings
 SECRET_KEY = 'django-insecure-l@d+ry&@31umkbca7x=ohd&5_72fu@&b09bdp231yiha*p)880'
 DEBUG = True
 ALLOWED_HOSTS = []
 
-# Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -21,8 +18,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'flash_pr',
-    'baha',
+    'flash_pr'
 ]
 
 MIDDLEWARE = [

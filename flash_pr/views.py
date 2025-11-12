@@ -63,7 +63,6 @@ def search(request):
     }
     return render(request, 'search.html', context)
 
-# Авторизация
 def login_view(request):
     if request.method == 'POST':
         email = request.POST.get('email')
@@ -77,7 +76,6 @@ def login_view(request):
 
 def register_view(request):
     if request.method == 'POST':
-        # Логика регистрации
         pass
     return render(request, 'register.html')
 
@@ -85,19 +83,16 @@ def logout_view(request):
     logout(request)
     return redirect('home')
 
-# Корзина - исправляем декораторы
 @login_required(login_url='/login/')
 def cart_view(request):
-    # Логика отображения корзины
     return render(request, 'cart.html')
 
 @login_required(login_url='/login/')
 def add_to_cart(request, game_id):
     game = get_object_or_404(Games, id=game_id)
-    # Логика добавления в корзину
+
     return redirect('cart')
 
-# Новые функции для новинок и распродажи
 def new_games(request):
     new_games = Games.objects.all()[:6]
     context = {'new_games': new_games}

@@ -18,7 +18,6 @@ body {
     font-weight: bold;
     font-size: 1.5rem;
 }
-
 .btn-primary {
     background-color: #007bff;
     border-color: #007bff;
@@ -40,10 +39,9 @@ body {
 }
 
 .card-title {
-    color: #2c3e50;
+    color: white;
     font-weight: 600;
 }
-
 .text-danger {
     color: #dc3545 !important;
     font-weight: bold;
@@ -53,7 +51,6 @@ h1, h2, h5 {
     color: #2c3e50;
 }
 
-/* Стили для формы входа */
 .form-check-input:checked {
     background-color: #007bff;
     border-color: #007bff;
