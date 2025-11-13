@@ -17,21 +17,21 @@ def home(request):
 def games_list(request):
     genre = request.GET.get('genre')
     platform = request.GET.get('platform')
-    
+
     games = Games.objects.all()
-    
+
     if genre:
         games = games.filter(genre=genre)
     if platform:
         games = games.filter(platform=platform)
-    
+
     context = {'games': games}
     return render(request, 'games_list.html', context)
 
 def game_detail(request, game_id):
     game = get_object_or_404(Games, id=game_id)
     reviews = Reviews.objects.filter(game=game)
-    
+
     context = {
         'game': game,
         'reviews': reviews
@@ -46,7 +46,7 @@ def sellers_list(request):
 def seller_detail(request, seller_id):
     seller = get_object_or_404(Sellers, id=seller_id)
     seller_games = Games.objects.filter(seller=seller)
-    
+
     context = {
         'seller': seller,
         'seller_games': seller_games
@@ -56,7 +56,7 @@ def seller_detail(request, seller_id):
 def search(request):
     query = request.GET.get('q', '')
     games = Games.objects.filter(title__icontains=query) if query else []
-    
+
     context = {
         'games': games,
         'query': query
@@ -90,13 +90,11 @@ def cart_view(request):
 @login_required(login_url='/login/')
 def add_to_cart(request, game_id):
     game = get_object_or_404(Games, id=game_id)
-
     return redirect('cart')
 
 def new_games(request):
-    new_games = Games.objects.all()[:6]
-    context = {'new_games': new_games}
-    return render(request, 'new_games.html', context)
+    # Убрали передачу контекста, так как шаблон статический
+    return render(request, 'new_games.html')
 
 def sale_games(request):
     sale_games = Games.objects.all()[:3]

@@ -4,16 +4,14 @@
 {% load static %}
 {% block content %}
 <div class="container mt-4">
-    <h1>🎮 Новые игры</h1>
+    <h1>Новые игры</h1>
     <p class="lead">Самые свежие релизы игровой индустрии</p>
     
     <div class="row">
-
+        <!-- Cyberpunk 2077 -->
         <div class="col-md-4 mb-4">
             <div class="card h-100">
-                <div class="card-img-top bg-secondary text-white d-flex align-items-center justify-content-center" style="height: 200px;">
-                    {% comment %} <img src="{% static 'images/Cyberpunk2077PhantomLiberty.jpg' %}" alt="Cyberpunk2077PhantomLiberty"> {% endcomment %}
-                </div>
+                <img src="/static/images/Cyberpunk2077PhantomLiberty.jpg" class="card-img-top" alt="Cyberpunk 2077: Phantom Liberty" style="height: 200px; object-fit: cover;">
                 <div class="card-body">
                     <h5 class="card-title">Cyberpunk 2077: Phantom Liberty</h5>
                     <p class="card-text">Новое дополнение к культовой игре с расширенным сюжетом.</p>
@@ -26,12 +24,11 @@
                 </div>
             </div>
         </div>
- 
+
+        <!-- Starfield -->
         <div class="col-md-4 mb-4">
             <div class="card h-100">
-                <div class="card-img-top bg-dark text-white d-flex align-items-center justify-content-center" style="height: 200px;">
-                    <span>Изображение игры</span>
-                </div>
+                <img src="/static/images/starfield.jpg" class="card-img-top" alt="Starfield: Galactic Edition" style="height: 200px; object-fit: cover;">
                 <div class="card-body">
                     <h5 class="card-title">Starfield: Galactic Edition</h5>
                     <p class="card-text">Космическая РПГ от создателей The Elder Scrolls.</p>
@@ -44,13 +41,11 @@
                 </div>
             </div>
         </div>
-        
- 
+
+        <!-- Baldur's Gate 3 -->
         <div class="col-md-4 mb-4">
             <div class="card h-100">
-                <div class="card-img-top bg-info text-white d-flex align-items-center justify-content-center" style="height: 200px;">
-                    <span>Изображение игры</span>
-                </div>
+                <img src="/static/images/baldurs-gate-3.jpg" class="card-img-top" alt="Baldur's Gate 3" style="height: 200px; object-fit: cover;">
                 <div class="card-body">
                     <h5 class="card-title">Baldur's Gate 3</h5>
                     <p class="card-text">Лучшая РПГ года по версии The Game Awards.</p>
@@ -66,11 +61,10 @@
     </div>
 
     <div class="row mt-4">
+        <!-- Alan Wake 2 -->
         <div class="col-md-4 mb-4">
             <div class="card h-100">
-                <div class="card-img-top bg-warning text-dark d-flex align-items-center justify-content-center" style="height: 200px;">
-                    <span>Изображение игры</span>
-                </div>
+                <img src="/static/images/alan-wake-2.jpg" class="card-img-top" alt="Alan Wake 2" style="height: 200px; object-fit: cover;">
                 <div class="card-body">
                     <h5 class="card-title">Alan Wake 2</h5>
                     <p class="card-text">Психологический хоррор с глубоким сюжетом.</p>
@@ -83,11 +77,11 @@
                 </div>
             </div>
         </div>
+
+        <!-- Spider-Man 2 -->
         <div class="col-md-4 mb-4">
             <div class="card h-100">
-                <div class="card-img-top bg-success text-white d-flex align-items-center justify-content-center" style="height: 200px;">
-                    <span>Изображение игры</span>
-                </div>
+                <img src="/static/images/spider-man-2.jpg" class="card-img-top" alt="Spider-Man 2" style="height: 200px; object-fit: cover;">
                 <div class="card-body">
                     <h5 class="card-title">Spider-Man 2</h5>
                     <p class="card-text">Новые приключения Человека-паука в Нью-Йорке.</p>
@@ -100,12 +94,11 @@
                 </div>
             </div>
         </div>
-        
+
+        <!-- Final Fantasy XVI -->
         <div class="col-md-4 mb-4">
             <div class="card h-100">
-                <div class="card-img-top bg-primary text-white d-flex align-items-center justify-content-center" style="height: 200px;">
-                    <span>Изображение игры</span>
-                </div>
+                <img src="/static/images/final-fantasy-xvi.jpg" class="card-img-top" alt="Final Fantasy XVI" style="height: 200px; object-fit: cover;">
                 <div class="card-body">
                     <h5 class="card-title">Final Fantasy XVI</h5>
                     <p class="card-text">Эпическое фэнтези с потрясающей графикой.</p>
@@ -119,10 +112,9 @@
             </div>
         </div>
     </div>
-    
-    <!-- Информационный блок -->
+
     <div class="alert alert-info mt-4">
-        <h4>🔥 Горячие новинки!</h4>
+        <h4>Горячие новинки!</h4>
         <p class="mb-0">Все новые игры доступны для предзаказа. Получите бонусы за раннюю покупку!</p>
     </div>
 </div>

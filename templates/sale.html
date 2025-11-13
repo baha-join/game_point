@@ -1,9 +1,158 @@
 {% extends 'base.html' %}
 
-{% block title %}Распродажа - GAMING STORE{% endblock %}
-
+{% block title %}Sale - GAMING STORE{% endblock %}
+{% load static %}
 {% block content %}
-<h1>Распродажа</h1>
-<div class="alert alert-info">
+<div class="container mt-4">
+    <div class="alert alert-danger text-center">
+        <h1 class="display-4">SALE</h1>
+        <p class="lead mb-0">Big discounts! Limited time offer</p>
+    </div>
+
+    <div class="row">
+        <!-- Game 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-danger">
+                <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-danger fs-6">
+                    -60%
+                </span>
+                <img src="/static/images/starfield.jpg" class="card-img-top" alt="Starfield" style="height: 200px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">Starfield: Galactic Edition</h5>
+                    <p class="card-text">Space RPG from creators of The Elder Scrolls.</p>
+                    <div class="d-flex align-items-center">
+                        <span class="text-danger fs-4 fw-bold">2 199 ₽</span>
+                        <span class="text-muted text-decoration-line-through ms-2">5 499 ₽</span>
+                    </div>
+                    <span class="badge bg-success">DISCOUNT</span>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-danger btn-sm">Add to Cart</button>
+                    <button class="btn btn-outline-secondary btn-sm">Details</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-warning">
+                <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-warning text-dark fs-6">
+                    -50%
+                </span>
+                <img src="/static/images/baldurs-gate-3.jpg" class="card-img-top" alt="Baldur's Gate 3" style="height: 200px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">Baldur's Gate 3</h5>
+                    <p class="card-text">Best RPG of the year by The Game Awards.</p>
+                    <div class="d-flex align-items-center">
+                        <span class="text-danger fs-4 fw-bold">2 149 ₽</span>
+                        <span class="text-muted text-decoration-line-through ms-2">4 299 ₽</span>
+                    </div>
+                    <span class="badge bg-success">DISCOUNT</span>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-danger btn-sm">Add to Cart</button>
+                    <button class="btn btn-outline-secondary btn-sm">Details</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-info">
+                <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-info fs-6">
+                    -40%
+                </span>
+                <img src="/static/images/alan-wake-2.jpg" class="card-img-top" alt="Alan Wake 2" style="height: 200px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">Alan Wake 2</h5>
+                    <p class="card-text">Psychological horror with deep story.</p>
+                    <div class="d-flex align-items-center">
+                        <span class="text-danger fs-4 fw-bold">2 399 ₽</span>
+                        <span class="text-muted text-decoration-line-through ms-2">3 999 ₽</span>
+                    </div>
+                    <span class="badge bg-success">DISCOUNT</span>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-danger btn-sm">Add to Cart</button>
+                    <button class="btn btn-outline-secondary btn-sm">Details</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game 4 -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-success">
+                <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-success fs-6">
+                    -30%
+                </span>
+                <img src="/static/images/final-fantasy-xvi.jpg" class="card-img-top" alt="Final Fantasy XVI" style="height: 200px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">Final Fantasy XVI</h5>
+                    <p class="card-text">Epic fantasy with amazing graphics.</p>
+                    <div class="d-flex align-items-center">
+                        <span class="text-danger fs-4 fw-bold">3 709 ₽</span>
+                        <span class="text-muted text-decoration-line-through ms-2">5 299 ₽</span>
+                    </div>
+                    <span class="badge bg-success">DISCOUNT</span>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-danger btn-sm">Add to Cart</button>
+                    <button class="btn btn-outline-secondary btn-sm">Details</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game 5 -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-primary">
+                <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-primary fs-6">
+                    -25%
+                </span>
+                <img src="/static/images/spider-man-2.jpg" class="card-img-top" alt="Spider-Man 2" style="height: 200px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">Spider-Man 2</h5>
+                    <p class="card-text">New adventures of Spider-Man in New York.</p>
+                    <div class="d-flex align-items-center">
+                        <span class="text-danger fs-4 fw-bold">4 499 ₽</span>
+                        <span class="text-muted text-decoration-line-through ms-2">5 999 ₽</span>
+                    </div>
+                    <span class="badge bg-success">DISCOUNT</span>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-danger btn-sm">Add to Cart</button>
+                    <button class="btn btn-outline-secondary btn-sm">Details</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game 6 -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-secondary">
+                <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-secondary fs-6">
+                    -20%
+                </span>
+                <img src="/static/images/Cyberpunk2077PhantomLiberty.jpg" class="card-img-top" alt="Cyberpunk 2077" style="height: 200px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">Cyberpunk 2077: Phantom Liberty</h5>
+                    <p class="card-text">New expansion to cult game with extended story.</p>
+                    <div class="d-flex align-items-center">
+                        <span class="text-danger fs-4 fw-bold">3 999 ₽</span>
+                        <span class="text-muted text-decoration-line-through ms-2">4 999 ₽</span>
+                    </div>
+                    <span class="badge bg-success">DISCOUNT</span>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-danger btn-sm">Add to Cart</button>
+                    <button class="btn btn-outline-secondary btn-sm">Details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="alert alert-warning text-center mt-4">
+        <h4>Sale ends in:</h4>
+        <div class="display-6 text-danger">3 days 12 hours</div>
+        <p class="mt-2 mb-0">Hurry up to buy at discount price!</p>
+    </div>
 </div>
 {% endblock %}
