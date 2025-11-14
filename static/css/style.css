@@ -1,6 +1,7 @@
 body {
     background-color: #f8f9fa;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 80px;
 }
 
 .card {
@@ -13,7 +14,13 @@ body {
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
-
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; 
+}
 .navbar-brand {
     font-weight: bold;
     font-size: 1.5rem;
@@ -39,7 +46,7 @@ body {
 }
 
 .card-title {
-    color: white;
+    color: black;
     font-weight: 600;
 }
 .text-danger {
