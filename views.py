@@ -2,10 +2,11 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.views.decorators.csrf import csrf_exempt
 from .models import Games, Sellers, Users, Reviews, Orders, OrderItems
 
+# ВРЕМЕННО: сделаем главную доступной без входа для тестирования
 def home_authenticated(request):
+    """Главная страница для авторизованных пользователей"""
     games = Games.objects.all()[:10]
     recommended_games = Games.objects.order_by('?')[:6]
     recent_games = Games.objects.order_by('-id')[:4]
@@ -20,31 +21,34 @@ def home_authenticated(request):
         'top_sellers': Sellers.objects.order_by('-rating')[:5]
     }
     
-    # ВРЕМЕННО используем home.html для всех
-    return render(request, 'home.html', context)
+    # Если пользователь авторизован, покажем персонализированную страницу
+    if request.user.is_authenticated:
+        return render(request, 'home_authenticated.html', context)
+    else:
+        # Иначе покажем обычную главную
+        return render(request, 'home.html', context)
 
-@csrf_exempt
 def login_view(request):
     print("=== LOGIN VIEW CALLED ===")
     print(f"Method: {request.method}")
     
     if request.method == 'POST':
-        username = request.POST.get('username', 'NO_USERNAME')
-        password = request.POST.get('password', 'NO_PASSWORD')
-        print(f"LOGIN ATTEMPT: '{username}' / '{password}'")
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        print(f"��� LOGIN ATTEMPT: '{username}' / '{password}'")
         
         user = authenticate(request, username=username, password=password)
-        print(f"AUTH RESULT: {user}")
+        print(f"��� AUTH RESULT: {user}")
         
         if user is not None:
             login(request, user)
-            print(f"LOGIN SUCCESS: {user.username}")
+            print(f"✅ LOGIN SUCCESS: {user.username}")
             return redirect('home')
         else:
-            print("LOGIN FAILED")
-            return render(request, 'login.html', {'error': 'Wrong username or password'})
+            print("❌ LOGIN FAILED")
+            return render(request, 'login.html', {'error': 'Неверное имя пользователя или пароль'})
     
-    print("RENDERING LOGIN FORM")
+    print("��� RENDERING LOGIN FORM")
     return render(request, 'login.html')
 
 def register_view(request):
@@ -64,22 +68,18 @@ def add_to_cart(request, game_id):
     return redirect('cart')
 
 def new_games(request):
-    new_games_list = Games.objects.order_by('-id')[:6]
-    context = {'games': new_games_list}
-    return render(request, 'new_games.html', context)
+    return render(request, 'new_games.html')
 
 def sale_games(request):
-    sale_games_list = Games.objects.all()[:6]
-    context = {'games': sale_games_list}
+    sale_games = Games.objects.all()[:3]
+    context = {'sale_games': sale_games}
     return render(request, 'sale.html', context)
 
 def profile(request):
     return render(request, 'profile.html')
 
 def all_games(request):
-    all_games_list = Games.objects.all()
-    context = {'games': all_games_list}
-    return render(request, 'all_games.html', context)
+    return render(request, 'all_games.html')
 
 def games_list(request):
     genre = request.GET.get('genre')

@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Приветственная секция -->
+<div class="welcome-section mb-5">
+    <div class="card game-card">
+        <div class="card-body text-center py-5">
+            <h1 class="display-5 fw-bold mb-3">Добро пожаловать, {{ user.username }}! ���</h1>
+            <p class="lead text-muted mb-4">Рады видеть вас снова в GAMING STORE</p>
+            
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <a href="{% url 'all_games' %}" class="btn btn-primary w-100 py-3">
+                                <i class="fas fa-shopping-cart me-2"></i>Продолжить покупки
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="{% url 'new_games' %}" class="btn btn-success w-100 py-3">
+                                <i class="fas fa-star me-2"></i>Новинки
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="{% url 'sale_games' %}" class="btn btn-warning w-100 py-3">
+                                <i class="fas fa-tag me-2"></i>Распродажа
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Персональные рекомендации -->
+<section class="recommendations-section mb-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="text-light">
+            <i class="fas fa-magic me-2"></i>
+            Рекомендуем именно вам
+        </h2>
+        <a href="{% url 'all_games' %}" class="btn btn-outline-light btn-sm">Все рекомендации →</a>
+    </div>
+    
+    <div class="row">
+        {% for game in recommended_games %}
+        <div class="col-md-4 col-lg-2 mb-4">
+            <div class="card game-card h-100">
+                <img src="{% static 'images/game-placeholder.jpg' %}" 
+                     class="card-img-top" 
+                     alt="{{ game.title }}"
+                     style="height: 120px; object-fit: cover;">
+                <div class="card-body p-2">
+                    <h6 class="card-title mb-1" style="font-size: 0.9rem;">{{ game.title|truncatewords:3 }}</h6>
+                    <p class="card-text mb-1">
+                        <small class="text-success fw-bold">{{ game.price }} ₽</small>
+                    </p>
+                    <button class="btn btn-primary btn-sm w-100">
+                        <i class="fas fa-cart-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Общая статистика магазина -->
+<div class="row mt-5 text-center">
+    <div class="col-md-3 mb-3">
+        <div class="card game-card">
+            <div class="card-body">
+                <h3 class="text-primary">{{ games_count }}</h3>
+                <p class="text-muted">Игр в каталоге</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-3">
+        <div class="card game-card">
+            <div class="card-body">
+                <h3 class="text-success">{{ sellers_count }}</h3>
+                <p class="text-muted">Продавцов</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-3">
+        <div class="card game-card">
+            <div class="card-body">
+                <h3 class="text-warning">{{ users_count }}</h3>
+                <p class="text-muted">Пользователей</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-3">
+        <div class="card game-card">
+            <div class="card-body">
+                <h3 class="text-info">5.0</h3>
+                <p class="text-muted">Рейтинг магазина</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
