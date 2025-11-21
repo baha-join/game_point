@@ -44,7 +44,9 @@ body {
     background-color: #c82333;
     border-color: #bd2130;
 }
-
+/* .card-header h2{
+    color: black;
+} */
 .card-title {
     color: black;
     font-weight: 600;

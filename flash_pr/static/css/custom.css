@@ -161,18 +161,6 @@ h1 {
     box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
-/* Адаптивность */
-@media (max-width: 768px) {
-    .container.mt-4 {
-        margin: 1rem;
-        padding: 1rem;
-        border-radius: 12px;
-    }
-    
-    .game-card:hover {
-        transform: none;
-    }
-}
 
 /* Дополнительные стили для новых элементов */
 .text-purple {
