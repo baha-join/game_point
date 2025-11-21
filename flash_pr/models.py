@@ -1,9 +1,10 @@
 from django.db import models
+from django.contrib.auth.hashers import make_password, check_password
 
 class Users(models.Model):
     full_name = models.CharField('Полное имя', max_length=100)
     mail = models.EmailField('Email', unique=True)
-    password = models.CharField('Пароль', max_length=50)
+    password = models.CharField('Пароль', max_length=128)  # Увеличиваем для хэшей
     registration_date = models.DateField('Дата регистрации', auto_now_add=True)
 
     class Meta:
@@ -12,6 +13,18 @@ class Users(models.Model):
 
     def __str__(self):
         return self.full_name
+
+    def set_password(self, raw_password):
+        self.password = make_password(raw_password)
+
+    def check_password(self, raw_password):
+        return check_password(raw_password, self.password)
+
+    def save(self, *args, **kwargs):
+        # Если пароль не хэширован - хэшируем его
+        if self.password and not self.password.startswith('pbkdf2_sha256$'):
+            self.set_password(self.password)
+        super().save(*args, **kwargs)
 
 class Sellers(models.Model):
     user = models.OneToOneField(Users, on_delete=models.CASCADE, verbose_name='Пользователь')        
