@@ -20,7 +20,6 @@ def home_authenticated(request):
         'top_sellers': Sellers.objects.order_by('-rating')[:5]
     }
     
-    # ВРЕМЕННО используем home.html для всех
     return render(request, 'home.html', context)
 
 @csrf_exempt

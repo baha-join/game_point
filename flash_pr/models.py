@@ -21,7 +21,6 @@ class Users(models.Model):
         return check_password(raw_password, self.password)
 
     def save(self, *args, **kwargs):
-        # Если пароль не хэширован - хэшируем его
         if self.password and not self.password.startswith('pbkdf2_sha256$'):
             self.set_password(self.password)
         super().save(*args, **kwargs)
@@ -49,6 +48,13 @@ class Games(models.Model):
     release_date = models.DateField('Дата выхода')
     platform = models.CharField('Платформа', max_length=50)
     price = models.DecimalField('Цена', max_digits=10, decimal_places=2, default=0.0)
+    image = models.ImageField(
+        'Изображение игры',
+        upload_to='games_images/',
+        blank=True,
+        null=True,
+        default='images/default/game_default.png'
+    )
 
     class Meta:
         verbose_name = 'Игра'

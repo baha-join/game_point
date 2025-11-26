@@ -61,7 +61,6 @@ class OrdersAdmin(admin.ModelAdmin):
 class OrderItemsAdmin(admin.ModelAdmin):
     list_display = ['order', 'game', 'quantity', 'price']
 
-# Регистрация моделей в админке
 admin.site.register(Users, UsersAdmin)
 admin.site.register(Sellers, SellersAdmin)
 admin.site.register(Games, GamesAdmin)
