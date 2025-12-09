@@ -4,8 +4,8 @@
     "pk": 1,
     "fields": {
       "full_name": "Иван Иванов",
-      "mail": "ivan@mail.com",
-      "password": "pbkdf2_sha256$260000$abc123...",
+      "mail": "ivan@example.com",
+      "password": "pbkdf2_sha256$260000$AbC123XyZ",
       "registration_date": "2024-01-15"
     }
   },
@@ -14,8 +14,8 @@
     "pk": 2,
     "fields": {
       "full_name": "Петр Петров",
-      "mail": "petr@mail.com",
-      "password": "pbkdf2_sha256$260000$def456...",
+      "mail": "petr@example.com",
+      "password": "pbkdf2_sha256$260000$DeF456UvW",
       "registration_date": "2024-01-16"
     }
   },
@@ -25,7 +25,7 @@
     "fields": {
       "user": 1,
       "login": "gamer_shop",
-      "email": "gamer@shop.com",
+      "email": "shop@example.com",
       "phone_number": "+79111111111",
       "rating": "4.75",
       "registration_date": "2024-01-15"
@@ -37,7 +37,7 @@
     "fields": {
       "user": 2,
       "login": "game_world",
-      "email": "game@world.com",
+      "email": "world@example.com",
       "phone_number": "+79222222222",
       "rating": "4.50",
       "registration_date": "2024-01-16"
@@ -52,7 +52,9 @@
       "description": "Захватывающая RPG в фэнтезийном мире",
       "genre": "RPG",
       "release_date": "2015-05-19",
-      "platform": "PC, PlayStation, Xbox"
+      "platform": "PC",
+      "price": "1999.99",
+      "image": ""
     }
   },
   {
@@ -64,7 +66,23 @@
       "description": "Научно-фантастическая RPG в будущем",
       "genre": "RPG",
       "release_date": "2020-12-10",
-      "platform": "PC, PlayStation, Xbox"
+      "platform": "PC",
+      "price": "2499.99",
+      "image": ""
+    }
+  },
+  {
+    "model": "flash_pr.games",
+    "pk": 3,
+    "fields": {
+      "seller": 2,
+      "title": "Red Dead Redemption 2",
+      "description": "Приключенческий вестерн с открытым миром",
+      "genre": "Приключения",
+      "release_date": "2018-10-26",
+      "platform": "PC",
+      "price": "2999.99",
+      "image": ""
     }
   },
   {
@@ -76,6 +94,17 @@
       "rating": 5,
       "comment": "Отличная игра, потрясающий сюжет!",
       "review_date": "2024-01-20"
+    }
+  },
+  {
+    "model": "flash_pr.reviews",
+    "pk": 2,
+    "fields": {
+      "user": 2,
+      "game": 2,
+      "rating": 4,
+      "comment": "Хорошая графика, но есть баги",
+      "review_date": "2024-01-21"
     }
   },
   {
@@ -95,7 +124,7 @@
       "order": 1,
       "game": 1,
       "quantity": 1,
-      "price": "29.99"
+      "price": "1999.99"
     }
   }
 ]
