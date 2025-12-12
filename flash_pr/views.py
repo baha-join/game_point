@@ -77,7 +77,20 @@ def profile(request):
 
 def all_games(request):
     all_games_list = Games.objects.all()
-    context = {'games': all_games_list}
+   
+    genre = request.GET.get('genre')
+    platform = request.GET.get('platform')
+    
+    if genre:
+        all_games_list = all_games_list.filter(genre__icontains=genre)
+    if platform:
+        all_games_list = all_games_list.filter(platform__icontains=platform)
+    
+    context = {
+        'games': all_games_list,
+        'genre': genre,
+        'platform': platform
+    }
     return render(request, 'all_games.html', context)
 
 def games_list(request):
